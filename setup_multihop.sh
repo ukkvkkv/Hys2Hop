@@ -71,7 +71,7 @@ EOF
 systemctl daemon-reload
 systemctl enable --now hysteria-eu-client
 
-sed -i 's/200 mbps/500 mbps/g; s/200 Mbps/500 Mbps/g; s/200mbps/500mbps/g; s/200Mbps/500Mbps/g' /etc/hysteria/config.json
+sed -i 's/200 mbps/300 mbps/g; s/200 Mbps/300 Mbps/g; s/200mbps/300mbps/g; s/200Mbps/300Mbps/g' /etc/hysteria/config.json
 
 sed -i '/"outbounds":[[:space:]]*\[/,/\][[:space:]]*,\{0,1\}/c\  "outbounds": [\
     {\
