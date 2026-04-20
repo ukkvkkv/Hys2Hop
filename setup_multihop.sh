@@ -71,7 +71,7 @@ EOF
 systemctl daemon-reload
 systemctl enable --now hysteria-eu-client
 
-sed -i 's/200 mbps/300 mbps/g; s/200 Mbps/300 Mbps/g; s/200mbps/300mbps/g; s/200Mbps/300Mbps/g' /etc/hysteria/config.json
+sed -i 's/200 mbps/0 mbps/g; s/200 Mbps/0 Mbps/g; s/200mbps/0mbps/g; s/200Mbps/0Mbps/g' /etc/hysteria/config.json
 
 sed -i '/"outbounds":[[:space:]]*\[/,/\][[:space:]]*,\{0,1\}/c\  "outbounds": [\
     {\
@@ -92,6 +92,10 @@ sed -i '/"outbounds":[[:space:]]*\[/,/\][[:space:]]*,\{0,1\}/c\  "outbounds": [\
     }\
   ],' /etc/hysteria/config.json
 
+  sed -i '
+s/"ignoreClientBandwidth":[[:space:]]*false/"ignoreClientBandwidth": true/g
+' /etc/hysteria/config.json
+
 systemctl restart hysteria-server
 
 echo
@@ -99,4 +103,3 @@ echo "Готово."
 echo "Проверь:"
 echo "systemctl status hysteria-eu-client --no-pager"
 echo "curl --socks5 127.0.0.1:1080 https://ifconfig.me"
-echo "Потом подключись к RU и проверь внешний IP."
