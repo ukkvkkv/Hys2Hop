@@ -71,8 +71,6 @@ EOF
 systemctl daemon-reload
 systemctl enable --now hysteria-eu-client
 
-sed -i 's/200 mbps/0 mbps/g; s/200 Mbps/0 Mbps/g; s/200mbps/0mbps/g; s/200Mbps/0Mbps/g' /etc/hysteria/config.json
-
 sed -i '/"outbounds":[[:space:]]*\[/,/\][[:space:]]*,\{0,1\}/c\  "outbounds": [\
     {\
       "name": "eu-hop",\
@@ -91,10 +89,6 @@ sed -i '/"outbounds":[[:space:]]*\[/,/\][[:space:]]*,\{0,1\}/c\  "outbounds": [\
       }\
     }\
   ],' /etc/hysteria/config.json
-
-  sed -i '
-s/"ignoreClientBandwidth":[[:space:]]*false/"ignoreClientBandwidth": true/g
-' /etc/hysteria/config.json
 
 systemctl restart hysteria-server
 
