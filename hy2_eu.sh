@@ -53,7 +53,7 @@ urlencode() {
 }
 
 echo "=== Установка EU Hysteria2 exit-сервера ==="
-read -rp "Введите домен EU-сервера, например lksdhjjldan.online: " DOMAIN
+read -rp "Введите домен EU-сервера: " DOMAIN
 DOMAIN="${DOMAIN,,}"
 if ! valid_domain "$DOMAIN"; then
   echo "Ошибка: домен выглядит некорректно: $DOMAIN"
