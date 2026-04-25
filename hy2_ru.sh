@@ -104,7 +104,7 @@ PY
 }
 
 echo "=== Установка RU Hysteria2 entry-сервера с выходом через EU ==="
-read -rp "Введите домен RU-сервера, например lksdhjjldan.ru: " RU_DOMAIN
+read -rp "Введите домен RU-сервера: " RU_DOMAIN
 RU_DOMAIN="${RU_DOMAIN,,}"
 if ! valid_domain "$RU_DOMAIN"; then
   echo "Ошибка: домен выглядит некорректно: $RU_DOMAIN"
