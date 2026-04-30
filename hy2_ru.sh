@@ -232,7 +232,6 @@ outbounds:
 acl:
   inline:
     - ru_direct(suffix:ru)
-    - ru_direct(suffix:telegram.com)
     - eu_exit(all)
 
 masquerade:
